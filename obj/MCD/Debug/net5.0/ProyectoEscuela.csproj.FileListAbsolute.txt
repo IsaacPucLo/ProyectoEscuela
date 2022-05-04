@@ -1,0 +1,16 @@
+C:\Users\User\Desktop\Blue Ocean Tecnologies\Capacitación tecnica\Modulo 4. ASP.NET\1.5 Funamentos de C# con NET Core 2018\ProyectoEscuela\bin\MCD\Debug\net5.0\ProyectoEscuela.exe
+C:\Users\User\Desktop\Blue Ocean Tecnologies\Capacitación tecnica\Modulo 4. ASP.NET\1.5 Funamentos de C# con NET Core 2018\ProyectoEscuela\bin\MCD\Debug\net5.0\ProyectoEscuela.deps.json
+C:\Users\User\Desktop\Blue Ocean Tecnologies\Capacitación tecnica\Modulo 4. ASP.NET\1.5 Funamentos de C# con NET Core 2018\ProyectoEscuela\bin\MCD\Debug\net5.0\ProyectoEscuela.runtimeconfig.json
+C:\Users\User\Desktop\Blue Ocean Tecnologies\Capacitación tecnica\Modulo 4. ASP.NET\1.5 Funamentos de C# con NET Core 2018\ProyectoEscuela\bin\MCD\Debug\net5.0\ProyectoEscuela.runtimeconfig.dev.json
+C:\Users\User\Desktop\Blue Ocean Tecnologies\Capacitación tecnica\Modulo 4. ASP.NET\1.5 Funamentos de C# con NET Core 2018\ProyectoEscuela\bin\MCD\Debug\net5.0\ProyectoEscuela.dll
+C:\Users\User\Desktop\Blue Ocean Tecnologies\Capacitación tecnica\Modulo 4. ASP.NET\1.5 Funamentos de C# con NET Core 2018\ProyectoEscuela\bin\MCD\Debug\net5.0\ref\ProyectoEscuela.dll
+C:\Users\User\Desktop\Blue Ocean Tecnologies\Capacitación tecnica\Modulo 4. ASP.NET\1.5 Funamentos de C# con NET Core 2018\ProyectoEscuela\bin\MCD\Debug\net5.0\ProyectoEscuela.pdb
+C:\Users\User\Desktop\Blue Ocean Tecnologies\Capacitación tecnica\Modulo 4. ASP.NET\1.5 Funamentos de C# con NET Core 2018\ProyectoEscuela\obj\MCD\Debug\net5.0\ProyectoEscuela.csproj.AssemblyReference.cache
+C:\Users\User\Desktop\Blue Ocean Tecnologies\Capacitación tecnica\Modulo 4. ASP.NET\1.5 Funamentos de C# con NET Core 2018\ProyectoEscuela\obj\MCD\Debug\net5.0\ProyectoEscuela.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\User\Desktop\Blue Ocean Tecnologies\Capacitación tecnica\Modulo 4. ASP.NET\1.5 Funamentos de C# con NET Core 2018\ProyectoEscuela\obj\MCD\Debug\net5.0\ProyectoEscuela.AssemblyInfoInputs.cache
+C:\Users\User\Desktop\Blue Ocean Tecnologies\Capacitación tecnica\Modulo 4. ASP.NET\1.5 Funamentos de C# con NET Core 2018\ProyectoEscuela\obj\MCD\Debug\net5.0\ProyectoEscuela.AssemblyInfo.cs
+C:\Users\User\Desktop\Blue Ocean Tecnologies\Capacitación tecnica\Modulo 4. ASP.NET\1.5 Funamentos de C# con NET Core 2018\ProyectoEscuela\obj\MCD\Debug\net5.0\ProyectoEscuela.csproj.CoreCompileInputs.cache
+C:\Users\User\Desktop\Blue Ocean Tecnologies\Capacitación tecnica\Modulo 4. ASP.NET\1.5 Funamentos de C# con NET Core 2018\ProyectoEscuela\obj\MCD\Debug\net5.0\ProyectoEscuela.dll
+C:\Users\User\Desktop\Blue Ocean Tecnologies\Capacitación tecnica\Modulo 4. ASP.NET\1.5 Funamentos de C# con NET Core 2018\ProyectoEscuela\obj\MCD\Debug\net5.0\ref\ProyectoEscuela.dll
+C:\Users\User\Desktop\Blue Ocean Tecnologies\Capacitación tecnica\Modulo 4. ASP.NET\1.5 Funamentos de C# con NET Core 2018\ProyectoEscuela\obj\MCD\Debug\net5.0\ProyectoEscuela.pdb
+C:\Users\User\Desktop\Blue Ocean Tecnologies\Capacitación tecnica\Modulo 4. ASP.NET\1.5 Funamentos de C# con NET Core 2018\ProyectoEscuela\obj\MCD\Debug\net5.0\ProyectoEscuela.genruntimeconfig.cache
