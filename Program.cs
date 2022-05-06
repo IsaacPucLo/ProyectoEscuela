@@ -12,10 +12,9 @@ namespace ProyectoEscuela
 
             escuela.Pais = "México";
             escuela.Ciudad = "Porgreso";
+            escuela.TipoEscuela = TipoEscuela.Secundaria;
 
-
-
-            Console.WriteLine(escuela.Nombre);
+            Console.WriteLine(escuela);
         }
     }
 }
