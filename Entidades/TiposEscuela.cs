@@ -1,7 +1,7 @@
 ﻿namespace CoreEscuela.Entidades
 {
     
-    public enum TipoEscuela {   //Especial enum
+    public enum TiposEscuela {   //Especial enum
 
         Primaria, Secundaria, PreEscolar, Universidad //Esto es igual a una lista de enteros,
                                           //al no poner su valor x = 0, z = 1, etc,

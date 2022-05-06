@@ -16,16 +16,16 @@ namespace CoreEscuela.Entidades {
 
         public string Ciudad { set; get; }
 
-        public TipoEscuela TipoEscuela { set; get; }
+        public TiposEscuela TipoEscuela { set; get; }
 
 
         //Constructor
         public Escuela(string nombre, int año) => (Nombre, AñoDeCreacion) = (nombre, año);
 
         
-        //En la declaraci�n del siguente constructor estamos usando dos atributos "opcionales" al momento de crear y
+        //En la declaración del siguente constructor estamos usando dos atributos "opcionales" al momento de crear y
         //esto se hace dandole un valor "default" a los atributos
-        public Escuela(string nombre, int año, TipoEscuela tipo, string pais="", string ciudad="") {
+        public Escuela(string nombre, int año, TiposEscuela tipo, string pais="", string ciudad="") {
             Nombre = nombre;
             AñoDeCreacion = año;
             TipoEscuela = tipo;
