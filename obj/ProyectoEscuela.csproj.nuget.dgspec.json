@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\User\\Desktop\\Blue Ocean Tecnologies\\Capacitación tecnica\\Modulo 4. ASP.NET\\1.5 Funamentos de C# con NET Core 2018\\ProyectoEscuela\\ProyectoEscuela.csproj": {}
+    "C:\\Users\\User\\Desktop\\Blue Ocean Tecnologies\\Capacitación tecnica\\Modulo 4. ASP.NET\\2. Funamentos de C# con NET Core 2018\\ProyectoEscuela\\ProyectoEscuela.csproj": {}
   },
   "projects": {
-    "C:\\Users\\User\\Desktop\\Blue Ocean Tecnologies\\Capacitación tecnica\\Modulo 4. ASP.NET\\1.5 Funamentos de C# con NET Core 2018\\ProyectoEscuela\\ProyectoEscuela.csproj": {
+    "C:\\Users\\User\\Desktop\\Blue Ocean Tecnologies\\Capacitación tecnica\\Modulo 4. ASP.NET\\2. Funamentos de C# con NET Core 2018\\ProyectoEscuela\\ProyectoEscuela.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\User\\Desktop\\Blue Ocean Tecnologies\\Capacitación tecnica\\Modulo 4. ASP.NET\\1.5 Funamentos de C# con NET Core 2018\\ProyectoEscuela\\ProyectoEscuela.csproj",
+        "projectUniqueName": "C:\\Users\\User\\Desktop\\Blue Ocean Tecnologies\\Capacitación tecnica\\Modulo 4. ASP.NET\\2. Funamentos de C# con NET Core 2018\\ProyectoEscuela\\ProyectoEscuela.csproj",
         "projectName": "ProyectoEscuela",
-        "projectPath": "C:\\Users\\User\\Desktop\\Blue Ocean Tecnologies\\Capacitación tecnica\\Modulo 4. ASP.NET\\1.5 Funamentos de C# con NET Core 2018\\ProyectoEscuela\\ProyectoEscuela.csproj",
+        "projectPath": "C:\\Users\\User\\Desktop\\Blue Ocean Tecnologies\\Capacitación tecnica\\Modulo 4. ASP.NET\\2. Funamentos de C# con NET Core 2018\\ProyectoEscuela\\ProyectoEscuela.csproj",
         "packagesPath": "C:\\Users\\User\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\User\\Desktop\\Blue Ocean Tecnologies\\Capacitación tecnica\\Modulo 4. ASP.NET\\1.5 Funamentos de C# con NET Core 2018\\ProyectoEscuela\\obj\\",
+        "outputPath": "C:\\Users\\User\\Desktop\\Blue Ocean Tecnologies\\Capacitación tecnica\\Modulo 4. ASP.NET\\2. Funamentos de C# con NET Core 2018\\ProyectoEscuela\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",

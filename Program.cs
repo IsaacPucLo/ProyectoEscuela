@@ -1,4 +1,5 @@
 ﻿using System;
+using CoreEscuela.Entidades;
 
 namespace ProyectoEscuela
 {
@@ -6,7 +7,15 @@ namespace ProyectoEscuela
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+
+            var escuela = new Escuela("TecNM Campus Porgreso", 2010);
+
+            escuela.Pais = "México";
+            escuela.Ciudad = "Porgreso";
+
+
+
+            Console.WriteLine(escuela.Nombre);
         }
     }
 }
