@@ -12,9 +12,19 @@ namespace ProyectoEscuela
 
             escuela.Pais = "México";
             escuela.Ciudad = "Porgreso";
-            escuela.TipoEscuela = TipoEscuela.Secundaria;
+            escuela.TipoEscuela = TipoEscuela.Universidad;
 
-            Console.WriteLine(escuela);
+            var escuela2 = new Escuela("UADY", 1990, TipoEscuela.Universidad, ciudad:"Merida"); //Para indicar que el parámetro 
+                                                                                             //que le estoy mandando es de ciudad 
+                                                                                             //y no de pais como está definido en 
+                                                                                             //sus constructor, tengo que 
+                                                                                             //escribir el nombre del parametro 
+                                                                                              //seguido de ":"]*/
+
+
+           Console.WriteLine(escuela);
+           Console.WriteLine(escuela2);
+
         }
     }
 }

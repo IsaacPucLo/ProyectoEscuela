@@ -22,9 +22,20 @@ namespace CoreEscuela.Entidades {
         //Constructor
         public Escuela(string nombre, int año) => (Nombre, AñoDeCreacion) = (nombre, año);
 
+        
+        //En la declaración del siguente constructor estamos usando dos atributos "opcionales" al momento de crear y
+        //esto se hace dandole un valor "default" a los atributos
+        public Escuela(string nombre, int año, TipoEscuela tipo, string pais="", string ciudad="") {
+            Nombre = nombre;
+            AñoDeCreacion = año;
+            TipoEscuela = tipo;
+            Pais = pais;
+            Ciudad = ciudad;
+        } 
+
         public override string ToString() {
 
-            return $"Nombre: {Nombre}, Tipo: {TipoEscuela} \nPaís: {Pais}, Ciudad: {Ciudad}";
+            return $"Nombre: {Nombre}, Tipo: {TipoEscuela} \nPaís: {Pais}, Ciudad: {Ciudad}"; //poner el signo de pesos para definir las variales dentro de la misma cadena
         }
 
     }
