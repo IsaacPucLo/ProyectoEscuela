@@ -34,7 +34,9 @@ namespace ProyectoEscuela
                 new Curso() { Nombre = "601", Jornada = TiposJornada.Noche }
             };
 
-            otraColeccion.Clear();
+            escuela.Cursos.RemoveAll((cur) => cur.Nombre == "501");  //Expresión Lambda para eliminar las coicidencias dentro de la lista 
+
+            
             escuela.Cursos.AddRange(otraColeccion);  //La función add range nos permite añadir una coleccion o conjunto de valores a la lista
 
             ImprimirCursosEscuela(escuela);
