@@ -8,7 +8,7 @@ namespace CoreEscuela.Entidades
 
         public string Nombre { set; get; }
 
-        public string Jornada { set; get; }
+        public TiposJornada Jornada { set; get; }
 
         public Curso() {
             UniqueId = Guid.NewGuid().ToString();
