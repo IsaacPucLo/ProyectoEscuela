@@ -23,14 +23,36 @@ namespace CoreEscuela
             Escuela = new Escuela("TecNM Campus Porgreso", 2008, TiposEscuela.Universidad, ciudad: "Progreso", pais: "México");
             CargarCursos();
             CargarAsignaturas();
-
             CargarEvaluaciones();
 
         }
 
         private void CargarEvaluaciones()
         {
-            throw new NotImplementedException();
+            
+           foreach (var curso in Escuela.Cursos)
+            {
+                foreach (var asignatura in curso.Asignaturas)
+                {
+                    foreach (var alumno in curso.Alumnos)
+                    {
+                        var rnd = new Random(System.Environment.TickCount);
+
+                        for (int i = 0; i < 5; i++)
+                        {
+                            Evaluaciones ev = new Evaluaciones(){
+                                Asignatura = asignatura,
+                                Nombre = $"{asignatura.Nombre} Ev#{i+1}",
+                                Nota = (float)(5 * rnd.NextDouble()),
+                                Alumno = alumno
+                            };
+                            alumno.Evaluaciones.Add(ev);  //Debe estar inicializado, sino da error
+                        }
+
+                    }
+                }
+            } 
+
         }
 
         private void CargarAsignaturas()
@@ -58,7 +80,7 @@ namespace CoreEscuela
                                from a1 in apellido1
                                select new Alumno { Nombre = $"{n1} {n2} {a1}" };
 
-            return ListaAlumnos.OrderBy( (al) => al.UniqueId).Take(cantidad).ToList();
+            return ListaAlumnos.OrderBy((al) => al.UniqueId).Take(cantidad).ToList();
         }
 
         private void CargarCursos()
