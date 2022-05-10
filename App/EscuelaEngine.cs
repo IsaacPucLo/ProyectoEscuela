@@ -1,4 +1,6 @@
+using System;
 using System.Collections.Generic;
+using System.Linq;
 using CoreEscuela.Entidades;
 
 namespace CoreEscuela
@@ -19,7 +21,53 @@ namespace CoreEscuela
         public void Inicilizar()
         {
             Escuela = new Escuela("TecNM Campus Porgreso", 2008, TiposEscuela.Universidad, ciudad: "Progreso", pais: "México");
+            CargarCursos();
+            CargarAsignaturas();
+            
+            foreach (var curso in Escuela.Cursos) //A cada curso que tiene la esucela se le agregan todos los alumnos
+            {
+                curso.Alumnos.AddRange(CargarAlumnos());
+            }
 
+            CargarEvaluaciones();
+
+        }
+
+        private void CargarEvaluaciones()
+        {
+            throw new NotImplementedException();
+        }
+
+        private void CargarAsignaturas()
+        {
+            foreach (var curso in Escuela.Cursos)
+            {
+                List<Asignatura> litaAsignaturas = new List<Asignatura>(){ //dejamos la creacion de las materias dentro del ciclo porque así cada materia tendrá un unico id segun el curso al que estpe asignado
+                    new Asignatura{Nombre = "Matemáticas"},
+                    new Asignatura{Nombre = "Español"},
+                    new Asignatura{Nombre = "Inglés"},
+                    new Asignatura{Nombre = "Ciencias Naturales"}
+                };
+                curso.Asignaturas.AddRange(litaAsignaturas);
+            }
+        }
+
+        private IEnumerable<Alumno> CargarAlumnos()
+        {
+            string[] nombre1 = { "Alba", "Felipa", "Eusebio", "Farid", "Donald", "Alvaro", "Nicolás" };
+            string[] apellido1 = { "Ruiz", "Sarmiento", "Uribe", "Maduro", "Trump", "Toledo", "Herrera" };
+            string[] nombre2 = { "Freddy", "Anabel", "Rick", "Murty", "Silvana", "Diomedes", "Nicomedes", "Teodoro" };
+
+            var ListaAlumnos = from n1 in nombre1
+                               from n2 in nombre2
+                               from a1 in apellido1
+                               select new Alumno { Nombre = $"{n1} {n2} {a1}" };
+
+            return ListaAlumnos;
+        }
+
+        private void CargarCursos()
+        {
             Escuela.Cursos = new List<Curso>(){
                 new Curso() { Nombre = "101", Jornada = TiposJornada.Mañana },
                 new Curso() { Nombre = "201", Jornada = TiposJornada.Tarde },
@@ -28,5 +76,7 @@ namespace CoreEscuela
                 new Curso() { Nombre = "501", Jornada = TiposJornada.Mañana }
             };
         }
+
+
     }
 }
