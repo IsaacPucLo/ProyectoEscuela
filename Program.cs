@@ -15,6 +15,16 @@ namespace ProyectoEscuela
             engine.Inicilizar();
 
             ImprimirCursosEscuela(engine.Escuela);
+
+
+            Printer.DibujarLinea(20);
+            Printer.DibujarLinea(20);
+            Printer.DibujarLinea(20);
+            Printer.ImprimirTitulo("Pruebas de Polimorfismo");
+
+            var listaObjetos = engine.ObtenerObjetosEscuela();
+
+
         }
 
 
