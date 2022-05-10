@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using CoreEscuela;
 using CoreEscuela.Entidades;
 using static System.Console;  //Esribiendo esta linea podemos imprimir en pantalla usando unicamente WriteLine
 
@@ -9,37 +10,11 @@ namespace ProyectoEscuela
     {
         static void Main(string[] args)
         {
-            //Crearcion de objetos escuela
-            var escuela = new Escuela("TecNM Campus Porgreso", 2010);
-            escuela.Pais = "México";
-            escuela.Ciudad = "Porgreso";
-            escuela.TipoEscuela = TiposEscuela.Universidad;
-
-            var escuela2 = new Escuela("UADY", 1990, TiposEscuela.Universidad, ciudad: "Merida"); //Para indicar que el parámetro 
-
-
-            escuela.Cursos = new List<Curso>(){
-                new Curso() { Nombre = "101", Jornada = TiposJornada.Mañana },
-                new Curso() { Nombre = "201", Jornada = TiposJornada.Tarde },
-                new Curso() { Nombre = "301", Jornada = TiposJornada.Noche }
-            };
-
-            escuela.Cursos.Add(new Curso() { Nombre = "102", Jornada = TiposJornada.Tarde });
-            escuela.Cursos.Add(new Curso() { Nombre = "202", Jornada = TiposJornada.Noche });
-
-
-            var otraColeccion = new List<Curso>(){
-                new Curso() { Nombre = "401", Jornada = TiposJornada.Mañana },
-                new Curso() { Nombre = "501", Jornada = TiposJornada.Mañana },
-                new Curso() { Nombre = "601", Jornada = TiposJornada.Noche }
-            };
-
-            escuela.Cursos.RemoveAll((cur) => cur.Nombre == "501");  //Expresión Lambda para eliminar las coicidencias dentro de la lista 
-
+            var engine = new EscuelaEngine();
+            engine.Inicilizar();
             
-            escuela.Cursos.AddRange(otraColeccion);  //La función add range nos permite añadir una coleccion o conjunto de valores a la lista
+            ImprimirCursosEscuela(engine.Escuela);
 
-            ImprimirCursosEscuela(escuela);
 
         }
 
@@ -59,17 +34,6 @@ namespace ProyectoEscuela
                     WriteLine($"Nombre: {curso.Nombre}, Id: {curso.UniqueId}");
                 }
             }
-        }
-
-
-        private static void ImprimirCursos(Curso[] arregloCursos)
-        {
-            foreach (var curso in arregloCursos)
-            {
-                System.Console.WriteLine($"Nombre: {curso.Nombre}, Id: {curso.UniqueId}");
-
-            }
-
         }
     }
 }
