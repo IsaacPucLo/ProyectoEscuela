@@ -5,7 +5,7 @@ using CoreEscuela.Entidades;
 
 namespace CoreEscuela
 {
-    class EscuelaEngine
+    public sealed class EscuelaEngine //Permite crear objetos de esta clase pero no permite que otras clases hereden de esta
     {
 
         //Atributos
@@ -40,7 +40,7 @@ namespace CoreEscuela
 
                         for (int i = 0; i < 5; i++)
                         {
-                            Evaluaciones ev = new Evaluaciones(){
+                            Evaluacion ev = new Evaluacion(){
                                 Asignatura = asignatura,
                                 Nombre = $"{asignatura.Nombre} Ev#{i+1}",
                                 Nota = (float)(5 * rnd.NextDouble()),

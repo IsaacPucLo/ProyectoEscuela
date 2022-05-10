@@ -2,19 +2,13 @@ using System;
 
 namespace CoreEscuela.Entidades
 {
-    public class Evaluaciones
+    public abstract class ObjetoEscuelaBase     //El abstract permite unicamente que hereden de la clase, no para crear objetos (instanciarlo)
     {
         public string UniqueId { private set; get; }
 
         public string Nombre { set; get; }
 
-        public Alumno Alumno { set; get; }
-
-        public Asignatura Asignatura { get; set; }
-
-        public float Nota { get; set; }
-
-        public Evaluaciones()
+        public ObjetoEscuelaBase()
         {
             UniqueId = Guid.NewGuid().ToString();
         }

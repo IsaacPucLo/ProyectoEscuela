@@ -1,20 +1,12 @@
 using System;
 using System.Collections.Generic;
 
-namespace CoreEscuela.Entidades {
+namespace CoreEscuela.Entidades
+{
 
-    public class Escuela{
+    public class Escuela: ObjetoEscuelaBase
+    {
         //Atributos
-        public string UniqueId {get; set; } = Guid.NewGuid().ToString();
-
-        string nombre;
-        
-        public string Nombre {
-            get { return nombre; }
-
-            set { nombre = value; }
-        }
-
         public int AñoDeCreacion { set; get; }
 
         public string Pais { set; get; }
@@ -23,7 +15,7 @@ namespace CoreEscuela.Entidades {
 
         public TiposEscuela TipoEscuela { set; get; }
 
-        public List<Curso> Cursos { set; get; } 
+        public List<Curso> Cursos { set; get; }
 
 
 
@@ -31,18 +23,20 @@ namespace CoreEscuela.Entidades {
         //Constructor
         public Escuela(string nombre, int año) => (Nombre, AñoDeCreacion) = (nombre, año);
 
-        
+
         //En la declaración del siguente constructor estamos usando dos atributos "opcionales" al momento de crear y
         //esto se hace dandole un valor "default" a los atributos
-        public Escuela(string nombre, int año, TiposEscuela tipo, string pais="", string ciudad="") {
+        public Escuela(string nombre, int año, TiposEscuela tipo, string pais = "", string ciudad = "")
+        {
             Nombre = nombre;
             AñoDeCreacion = año;
             TipoEscuela = tipo;
             Pais = pais;
             Ciudad = ciudad;
-        } 
+        }
 
-        public override string ToString() {
+        public override string ToString()
+        {
 
             return $"Nombre: {Nombre}, Tipo: {TipoEscuela} \nPa�s: {Pais}, Ciudad: {Ciudad}"; //poner el signo de pesos para definir las variales dentro de la misma cadena
         }
