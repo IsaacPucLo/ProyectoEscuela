@@ -1,10 +1,11 @@
 using System;
 using System.Collections.Generic;
+using CoreEscuela.Util;
 
 namespace CoreEscuela.Entidades
 {
 
-    public class Escuela: ObjetoEscuelaBase
+    public class Escuela : ObjetoEscuelaBase, ILugar
     {
         //Atributos
         public int AñoDeCreacion { set; get; }
@@ -12,6 +13,8 @@ namespace CoreEscuela.Entidades
         public string Pais { set; get; }
 
         public string Ciudad { set; get; }
+
+        public string Direccion { get; set; }
 
         public TiposEscuela TipoEscuela { set; get; }
 
@@ -39,6 +42,18 @@ namespace CoreEscuela.Entidades
         {
 
             return $"Nombre: {Nombre}, Tipo: {TipoEscuela} \nPa�s: {Pais}, Ciudad: {Ciudad}"; //poner el signo de pesos para definir las variales dentro de la misma cadena
+        }
+
+
+        public void LimpiarLugar()
+        {
+            Printer.DibujarLinea();
+            Console.WriteLine("Limpiando Establecimiento...");
+            foreach (var curso in Cursos)
+            {
+                curso.LimpiarLugar();
+            }
+            Console.WriteLine($"Escuela {Nombre} Limpio");
         }
 
     }
