@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using CoreEscuela;
 using CoreEscuela.Entidades;
 using CoreEscuela.Util;
@@ -24,6 +25,11 @@ namespace ProyectoEscuela
 
             var listaObjetos = engine.ObtenerObjetosEscuela();
 
+            var listaILugar = from obj in listaObjetos
+                              where obj is ILugar //Implementar el where para estar seguros de que unicamente traerá ese tipo de objeto
+                              select (ILugar)obj;   //Ya implementado el where se puede hacer el casteo sin problemas cuidando que sean el mismo objeto
+
+            //engine.Escuela.LimpiarLugar();
 
         }
 

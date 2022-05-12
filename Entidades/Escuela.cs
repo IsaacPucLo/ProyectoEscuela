@@ -48,12 +48,12 @@ namespace CoreEscuela.Entidades
         public void LimpiarLugar()
         {
             Printer.DibujarLinea();
-            Console.WriteLine("Limpiando Establecimiento...");
+            Console.WriteLine("Limpiando Escuela...");
             foreach (var curso in Cursos)
             {
                 curso.LimpiarLugar();
             }
-            Console.WriteLine($"Escuela {Nombre} Limpio");
+            Console.WriteLine($"\n Escuela {Nombre} Limpia");
         }
 
     }
