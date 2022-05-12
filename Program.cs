@@ -23,13 +23,7 @@ namespace ProyectoEscuela
             Printer.DibujarLinea(20);
             Printer.ImprimirTitulo("Pruebas de Polimorfismo");
 
-            var listaObjetos = engine.ObtenerObjetosEscuela();
-
-            var listaILugar = from obj in listaObjetos
-                              where obj is ILugar //Implementar el where para estar seguros de que unicamente traerá ese tipo de objeto
-                              select (ILugar)obj;   //Ya implementado el where se puede hacer el casteo sin problemas cuidando que sean el mismo objeto
-
-            //engine.Escuela.LimpiarLugar();
+            //var listaObjetos = engine.ObtenerObjetosEscuela(traeEvaluaciones: false);
 
         }
 
