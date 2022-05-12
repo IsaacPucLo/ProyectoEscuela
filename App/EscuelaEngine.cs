@@ -27,6 +27,7 @@ namespace CoreEscuela
 
         }
 
+        #region Metodos de carga
         private void CargarEvaluaciones()
         {
 
@@ -122,6 +123,7 @@ namespace CoreEscuela
             return listaObj;
         }
 
+        #endregion
 
     }
 }

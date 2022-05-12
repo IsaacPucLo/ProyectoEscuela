@@ -9,15 +9,10 @@ namespace CoreEscuela.Entidades
     {
         //Atributos
         public int AñoDeCreacion { set; get; }
-
         public string Pais { set; get; }
-
         public string Ciudad { set; get; }
-
         public string Direccion { get; set; }
-
         public TiposEscuela TipoEscuela { set; get; }
-
         public List<Curso> Cursos { set; get; }
 
 
