@@ -27,7 +27,15 @@ namespace CoreEscuela
 
         }
 
-        
+        public Dictionary<string, IEnumerable<ObjetoEscuelaBase>> ObtenerDiccionarioObjetos()
+        {
+            var diccionario = new Dictionary<string, IEnumerable<ObjetoEscuelaBase>>();
+
+            diccionario.Add("Escuiela", new[] { Escuela });  //Al pedir que sea un IEnumerable tenemos que hacer este artificio de crear un array para que lo tome como un tipo IEnumerable
+            diccionario.Add("Cursos", Escuela.Cursos.Cast<ObjetoEscuelaBase>());      //Aunque la lista de cursos y la lista de objetos de escuela base sean compatibles tneemos que hacer explicitamente la conversión
+
+            return diccionario;
+        }
 
         #region Metodos de carga
         private void CargarEvaluaciones()
