@@ -27,6 +27,8 @@ namespace CoreEscuela
 
         }
 
+        
+
         #region Metodos de carga
         private void CargarEvaluaciones()
         {

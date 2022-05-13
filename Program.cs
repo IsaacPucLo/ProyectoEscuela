@@ -17,17 +17,31 @@ namespace ProyectoEscuela
 
             ImprimirCursosEscuela(engine.Escuela);
 
+            Printer.ImprimirTitulo("Ejemplo de diccionario");
 
-            Printer.DibujarLinea(20);
-            Printer.DibujarLinea(20);
-            Printer.DibujarLinea(20);
-            Printer.ImprimirTitulo("Pruebas de Polimorfismo");
+            Dictionary<int, string> diccionario = new Dictionary<int, string>();
 
-            int dummy = 0;  //Puede ser asignado el valor de esta vartiable dentro de los parámetros de salida
-            var listaObjetos = engine.ObtenerObjetosEscuela(out int conteoEvaluaciones,
-                                                             out int conteoAlumnos,
-                                                             out dummy,
-                                                             out dummy);        //Sino queremos recibir ese parametro de salida se la asignamos a una variable externa, la almavenará ahí pero no en nuestra variable actual
+            //Para agregar pares al diccionario se puede hacer de esta manera:
+            diccionario.Add(17, "Isaac");
+            diccionario.Add(26, "Karol");
+
+            //Una forma de recorrer un diccionario es el foreach
+            foreach (var keyValPair in diccionario)
+            {
+                WriteLine($"Key: {keyValPair.Key}, Valor: {keyValPair.Value}");
+            }
+
+            Printer.DibujarLinea();
+            diccionario[35] = "Mariana";     //Esta es otra opcion de agregar valores al diccionario
+            WriteLine(diccionario[35]);       //En caso de querer imprimir un valor que el diccionario no tenga almacenado, ejemplo [0], este mandará una excepcion
+
+            Printer.DibujarLinea();
+            Printer.DibujarLinea();
+            Printer.ImprimirTitulo("Implementación al programa");
+            
+            Dictionary<string, string> dic = new Dictionary<string, string>();
+            dic["Luna"] = "Cuerpo celeste que gira al rededor del planeta tierra";
+            WriteLine(dic["Luna"]);
 
         }
 
