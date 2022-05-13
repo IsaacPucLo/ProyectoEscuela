@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using CoreEscuela.Entidades;
+using CoreEscuela.Util;
 
 namespace CoreEscuela
 {
@@ -27,6 +28,19 @@ namespace CoreEscuela
 
         }
 
+        public void ImprimirDiccionario(Dictionary<LlaveDiccionario, IEnumerable<ObjetoEscuelaBase>> dic){
+            foreach (var obj in dic)
+            {
+                Printer.ImprimirTitulo(obj.Key.ToString());
+
+                foreach (var val in obj.Value)
+                {
+                    System.Console.WriteLine(val);
+                }
+            }
+
+        }
+
         //CAMBIAMOS EL TIPO DE LLAVE QUE RECIBE EL DICCIONARIO A UN TIPO "llave diccionario" para que
         //unicamente puedan utilizar los tipos que ya definimos en ese enum
         public Dictionary<LlaveDiccionario, IEnumerable<ObjetoEscuelaBase>> ObtenerDiccionarioObjetos()
@@ -35,7 +49,8 @@ namespace CoreEscuela
 
             diccionario.Add(LlaveDiccionario.Escuela, new[] { Escuela });
             diccionario.Add(LlaveDiccionario.Cursos, Escuela.Cursos.Cast<ObjetoEscuelaBase>());
-
+            
+            var listaEvaluaciontmp = new List<Evaluacion>();
             var listaAsignaturatmp = new List<Asignatura>();
             var listaAlumnotmp = new List<Alumno>();
             foreach (var curso in Escuela.Cursos)
@@ -43,14 +58,12 @@ namespace CoreEscuela
                 listaAsignaturatmp.AddRange(curso.Asignaturas);
                 listaAlumnotmp.AddRange(curso.Alumnos);
 
-                var listatmp = new List<Evaluacion>();
                 foreach (var alumno in curso.Alumnos)
                 {
-                    listatmp.AddRange(alumno.Evaluaciones); //No podemos poner aquí el diccionario.add ya que en cada vuelta se estaría duplicando la creacion de esa llave, lo que da un error
+                    listaEvaluaciontmp.AddRange(alumno.Evaluaciones); //No podemos poner aquí el diccionario.add ya que en cada vuelta se estaría duplicando la creacion de esa llave, lo que da un error
                 }
-                diccionario.Add(LlaveDiccionario.Evaluaciones, listatmp.Cast<ObjetoEscuelaBase>());
             }
-
+            diccionario.Add(LlaveDiccionario.Evaluaciones, listaEvaluaciontmp.Cast<ObjetoEscuelaBase>());
             diccionario.Add(LlaveDiccionario.Asignaturas, listaAsignaturatmp.Cast<ObjetoEscuelaBase>());
             diccionario.Add(LlaveDiccionario.Alumnos, listaAlumnotmp.Cast<ObjetoEscuelaBase>());
 

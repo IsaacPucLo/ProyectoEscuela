@@ -17,8 +17,11 @@ namespace ProyectoEscuela
 
             ImprimirCursosEscuela(engine.Escuela);
 
-            Printer.ImprimirTitulo("Ejemplo de diccionario");
+            Printer.ImprimirTitulo("Impresion Diccionario");
 
+            var dic = engine.ObtenerDiccionarioObjetos();
+            
+            engine.ImprimirDiccionario(dic);
             
 
         }
