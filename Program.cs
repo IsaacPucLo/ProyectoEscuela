@@ -12,6 +12,9 @@ namespace ProyectoEscuela
     {
         static void Main(string[] args)
         {
+            //Se ejecuta al finalizar la ejecucion del programa
+            AppDomain.CurrentDomain.ProcessExit += AccionDelEvento;
+
             var engine = new EscuelaEngine();
             engine.Inicilizar();
 
@@ -24,6 +27,13 @@ namespace ProyectoEscuela
             engine.ImprimirDiccionario(dic);
             
 
+        }
+
+        private static void AccionDelEvento(Object sender, EventArgs e)
+        {
+            Printer.ImprimirTitulo("Saliendo");
+            Printer.Beep(2000, 1000, 3);
+            Printer.ImprimirTitulo("Salió");
         }
 
 
