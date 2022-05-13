@@ -23,7 +23,11 @@ namespace ProyectoEscuela
             Printer.DibujarLinea(20);
             Printer.ImprimirTitulo("Pruebas de Polimorfismo");
 
-            //var listaObjetos = engine.ObtenerObjetosEscuela(traeEvaluaciones: false);
+            int dummy = 0;  //Puede ser asignado el valor de esta vartiable dentro de los parámetros de salida
+            var listaObjetos = engine.ObtenerObjetosEscuela(out int conteoEvaluaciones,
+                                                             out int conteoAlumnos,
+                                                             out dummy,
+                                                             out dummy);        //Sino queremos recibir ese parametro de salida se la asignamos a una variable externa, la almavenará ahí pero no en nuestra variable actual
 
         }
 

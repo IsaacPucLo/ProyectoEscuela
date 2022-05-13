@@ -123,15 +123,14 @@ namespace CoreEscuela
             return listaObj;
         }
 
-        public List<ObjetoEscuelaBase> ObtenerObjetosEscuela(
-            out int conteoEvaluaciones,
-            out int conteoAlumnos,
-            out int conteoAsignaturas,
-            out int conteoCursos,
-            bool traeEvaluaciones = true,
-            bool traeAlumnos = true,
-            bool traeAsignaturas = true,
-            bool traeCursos = true)
+        public IReadOnlyList<ObjetoEscuelaBase> ObtenerObjetosEscuela(out int conteoEvaluaciones,
+                                                             out int conteoAlumnos,
+                                                             out int conteoAsignaturas,
+                                                             out int conteoCursos,
+                                                             bool traeEvaluaciones = true,
+                                                             bool traeAlumnos = true,
+                                                             bool traeAsignaturas = true,
+                                                             bool traeCursos = true)
         {
             var listaObj = new List<ObjetoEscuelaBase>();
             conteoCursos = conteoAlumnos = conteoEvaluaciones = conteoAsignaturas = 0;
@@ -164,12 +163,12 @@ namespace CoreEscuela
                     foreach (var alumno in curso.Alumnos)
                     {
                         listaObj.AddRange(alumno.Evaluaciones);
-                        conteoEvaluaciones = alumno.Evaluaciones.Count;
+                        conteoEvaluaciones += alumno.Evaluaciones.Count;
                     }
                 }
             }
 
-            return listaObj;
+            return listaObj.AsReadOnly();
         }
 
         #endregion
