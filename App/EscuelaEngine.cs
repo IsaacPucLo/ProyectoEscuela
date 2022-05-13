@@ -27,12 +27,14 @@ namespace CoreEscuela
 
         }
 
-        public Dictionary<string, IEnumerable<ObjetoEscuelaBase>> ObtenerDiccionarioObjetos()
+        //CAMBIAMOS EL TIPO DE LLAVE QUE RECIBE EL DICCIONARIO A UN TIPO "llave diccionario" para que
+        //unicamente puedan utilizar los tipos que ya definimos en ese enum
+        public Dictionary<LlaveDiccionario, IEnumerable<ObjetoEscuelaBase>> ObtenerDiccionarioObjetos()
         {
-            var diccionario = new Dictionary<string, IEnumerable<ObjetoEscuelaBase>>();
+            var diccionario = new Dictionary<LlaveDiccionario, IEnumerable<ObjetoEscuelaBase>>();
 
-            diccionario.Add("Escuiela", new[] { Escuela });  //Al pedir que sea un IEnumerable tenemos que hacer este artificio de crear un array para que lo tome como un tipo IEnumerable
-            diccionario.Add("Cursos", Escuela.Cursos.Cast<ObjetoEscuelaBase>());      //Aunque la lista de cursos y la lista de objetos de escuela base sean compatibles tneemos que hacer explicitamente la conversión
+            diccionario.Add(LlaveDiccionario.Escuela, new[] { Escuela });  
+            diccionario.Add(LlaveDiccionario.Cursos, Escuela.Cursos.Cast<ObjetoEscuelaBase>()); 
 
             return diccionario;
         }
