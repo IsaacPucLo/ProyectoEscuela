@@ -4,7 +4,7 @@ using System.Linq;
 using CoreEscuela.Entidades;
 using CoreEscuela.Util;
 
-namespace CoreEscuela
+namespace CoreEscuela.App
 {
     public sealed class EscuelaEngine //Permite crear objetos de esta clase pero no permite que otras clases hereden de esta
     {
@@ -33,7 +33,6 @@ namespace CoreEscuela
             foreach (var objdic in dic)
             {
                 Printer.ImprimirTitulo(objdic.Key.ToString());
-
                 foreach (var val in objdic.Value)
                 {
                     switch (objdic.Key)
@@ -60,7 +59,6 @@ namespace CoreEscuela
                             System.Console.WriteLine(val);
                             break;
                     }
-
                 }
             }
 

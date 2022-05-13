@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using CoreEscuela;
+using CoreEscuela.App;
 using CoreEscuela.Entidades;
 using CoreEscuela.Util;
 using static System.Console;  //Esribiendo esta linea podemos imprimir en pantalla usando unicamente WriteLine
@@ -18,13 +19,7 @@ namespace ProyectoEscuela
             var engine = new EscuelaEngine();
             engine.Inicilizar();
 
-            ImprimirCursosEscuela(engine.Escuela);
-
-            Printer.ImprimirTitulo("Impresion Diccionario");
-
-            var dic = engine.ObtenerDiccionarioObjetos();
-            
-            engine.ImprimirDiccionario(dic);
+            var reporteador = new Reporteador(engine.ObtenerDiccionarioObjetos());
             
 
         }
