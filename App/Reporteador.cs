@@ -59,19 +59,21 @@ namespace CoreEscuela.App
             return dicRta;
         }
 
-        public Dictionary<string, IEnumerable<Object>> ObtenerPromedioAlumnoXAsignatura(){
+        public Dictionary<string, IEnumerable<Object>> ObtenerPromedioAlumnoXAsignatura()
+        {
             var rta = new Dictionary<string, IEnumerable<Object>>();
             var dicEvalXAsig = ObtenerDicEvalXAsignatura();
 
             foreach (var asigConEval in dicEvalXAsig)
             {
                 var dummy = from eval in asigConEval.Value
-                select new {
-                    eval.Alumno.UniqueId,     //Usamos un tipo anónimo para poder devulver mas de una cosa ya que select solo puede devolver una cosa
-                    AlumnoNombre = eval.Alumno.Nombre,
-                    NombreEvaluacion = eval.Nombre,
-                    eval.Nota
-                };  
+                            group eval by eval.Alumno.UniqueId
+                            into grupoEvalsAlumno
+                            select new
+                            {
+                                AlumnoId = grupoEvalsAlumno.Key,
+                                Promedio = grupoEvalsAlumno.Average(evaluacion => evaluacion.Nota)  //Usamos una expresión Lambda para que a cada evaluación obtenfa el promedio de cada nota en las evalaucianes
+                            };
             }
 
             return rta;
