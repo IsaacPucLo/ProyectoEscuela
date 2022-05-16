@@ -28,7 +28,6 @@ namespace ProyectoEscuela
             Printer.ImprimirTitulo("Captura de una Evaluación por consola");
             var newEval = new Evaluacion();
             string nombre, notaString;
-            float nota;
 
             WriteLine("Ingrese el nombre de la evaluacion");
             Printer.PresioneEnter();
@@ -64,6 +63,7 @@ namespace ProyectoEscuela
                         throw new ArgumentOutOfRangeException("La nota debe estar entre 0 y 5");
                     }
                     WriteLine("La nota de la evaluación ha sido creado correctamente");
+                    return;     //Investigar más sobre este return y su uso/función
                 }
                 catch (ArgumentOutOfRangeException arge)    //Primero se ejecuta este catch sino es el error entonces continua al siguiente
                 {
@@ -74,6 +74,11 @@ namespace ProyectoEscuela
                 {
                     WriteLine("El valor de la nota no es un número válido");
                     WriteLine("Saliendo...");
+                }
+                finally
+                {
+                    Printer.ImprimirTitulo("FINALLY");
+                    Printer.Beep(2500, 500, 3);
                 }
             }
 
