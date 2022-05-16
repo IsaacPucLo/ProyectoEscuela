@@ -58,5 +58,23 @@ namespace CoreEscuela.App
             }
             return dicRta;
         }
+
+        public Dictionary<string, IEnumerable<Object>> ObtenerPromedioAlumnoXAsignatura(){
+            var rta = new Dictionary<string, IEnumerable<Object>>();
+            var dicEvalXAsig = ObtenerDicEvalXAsignatura();
+
+            foreach (var asigConEval in dicEvalXAsig)
+            {
+                var dummy = from eval in asigConEval.Value
+                select new {
+                    eval.Alumno.UniqueId,     //Usamos un tipo anónimo para poder devulver mas de una cosa ya que select solo puede devolver una cosa
+                    AlumnoNombre = eval.Alumno.Nombre,
+                    NombreEvaluacion = eval.Nombre,
+                    eval.Nota
+                };  
+            }
+
+            return rta;
+        }
     }
 }
