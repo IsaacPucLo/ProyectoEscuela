@@ -20,6 +20,7 @@ namespace ProyectoEscuela
             engine.Inicilizar();
 
             var reporteador = new Reporteador(engine.ObtenerDiccionarioObjetos());
+            var evalList = reporteador.ObtenerListaEvaluaciones();
             
 
         }
