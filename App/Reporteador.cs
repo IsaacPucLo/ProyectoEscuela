@@ -66,14 +66,20 @@ namespace CoreEscuela.App
 
             foreach (var asigConEval in dicEvalXAsig)
             {
-                var dummy = from eval in asigConEval.Value
-                            group eval by eval.Alumno.UniqueId
+                var promsAlum = from eval in asigConEval.Value  //Funcion para sacar el promedio del alumno
+                                group eval by new
+                                {
+                                    eval.Alumno.UniqueId,
+                                    eval.Alumno.Nombre
+                                }
                             into grupoEvalsAlumno
-                            select new
-                            {
-                                AlumnoId = grupoEvalsAlumno.Key,
-                                Promedio = grupoEvalsAlumno.Average(evaluacion => evaluacion.Nota)  //Usamos una expresión Lambda para que a cada evaluación obtenfa el promedio de cada nota en las evalaucianes
-                            };
+                                select new AlumnoPromedio   //Creamos una clase para adicionarle los atributos a nuestro objeto y que dehe de ser de tipo anónimo
+                                {
+                                    alumnoId = grupoEvalsAlumno.Key.UniqueId,
+                                    alumnoNombre = grupoEvalsAlumno.Key.Nombre,
+                                    promedio = grupoEvalsAlumno.Average(evaluacion => evaluacion.Nota)  //Usamos una expresión Lambda para que a cada evaluación obtenfa el promedio de cada nota en las evalaucianes
+                                };
+                rta.Add(asigConEval.Key, promsAlum);
             }
 
             return rta;

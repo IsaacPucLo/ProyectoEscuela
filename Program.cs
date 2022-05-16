@@ -21,6 +21,9 @@ namespace ProyectoEscuela
 
             var reporteador = new Reporteador(engine.ObtenerDiccionarioObjetos());
             var evalList = reporteador.ObtenerListaEvaluaciones();
+            var listaAsg = reporteador.ObtenerListaAsignaturas();
+            var listaEvalXAsig = reporteador.ObtenerDicEvalXAsignatura();
+            var listaPromXAsig = reporteador.ObtenerPromedioAlumnoXAsignatura();
             
 
         }
